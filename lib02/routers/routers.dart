@@ -1,8 +1,8 @@
 /*
  * @LastEditors: hezeying@xdf.cn
  * @Date: 2025-03-28 01:02:49
- * @LastEditTime: 2025-03-28 01:22:37
- * @FilePath: /flutter_getx/lib/routers/routers.dart
+ * @LastEditTime: 2025-03-30 18:41:46
+ * @FilePath: /flutter_getx/lib02/routers/routers.dart
  * @Description: 路由配置
  */
 import 'package:get/get.dart';

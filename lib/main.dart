@@ -1,13 +1,5 @@
-/*
- * @LastEditors: hezeying@xdf.cn
- * @Date: 2025-03-28 00:46:50
- * @LastEditTime: 2025-03-28 01:17:56
- * @FilePath: /flutter_getx/lib/main.dart
- * @Description: 路由管理 路由跳转 路由动画 中间件
- */
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import './routers/routers.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,20 +8,65 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          centerTitle: true, // 标题居中
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  final TextEditingController _editingController = TextEditingController();
+  MyHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Title'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: TextField(
+                controller: _editingController,
+              ),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+                onPressed: () {
+                  if (GetUtils.isEmail(_editingController.text)) {
+                    Get.snackbar("正确", "恭喜你, 完全正确",
+                        backgroundColor: Colors.greenAccent);
+                  } else {
+                    Get.snackbar("邮箱错误", "请输入正确的邮箱",
+                        backgroundColor: Colors.pink);
+                  }
+                },
+                child: const Text("验证邮箱")),
+            ElevatedButton(
+                onPressed: () {
+                  if (GetUtils.isPhoneNumber(_editingController.text) && _editingController.text.length==11) {
+                    Get.snackbar("正确", "恭喜你, 完全正确",
+                        backgroundColor: Colors.greenAccent);
+                  } else {
+                    Get.snackbar("手机号错误", "请输入正确的手机号",
+                        backgroundColor: Colors.pink);
+                  }
+                },
+                child: const Text("验证手机号")),
+          ],
         ),
       ),
-      initialRoute: "/", // 初始路由
-      defaultTransition: Transition.rightToLeft, // 默认过渡动画
-      // onGenerateRoute: onGenerateRoute, // flutter 路由配置方法
-      getPages: AppPage.routes, // getx 路由配置方法
     );
   }
 }

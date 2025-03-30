@@ -1,8 +1,8 @@
 /*
  * @LastEditors: hezeying@xdf.cn
  * @Date: 2025-03-28 01:03:04
- * @LastEditTime: 2025-03-28 01:15:52
- * @FilePath: /flutter_getx/lib/pages/tabs/user.dart
+ * @LastEditTime: 2025-03-30 17:57:30
+ * @FilePath: /flutter_getx/lib/02/pages/tabs/user.dart
  * @Description: 用户页面
  */
 import 'package:flutter/material.dart';
