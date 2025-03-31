@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      initialBinding: AllControllerBinding(), // 全局绑定GetxController
+      initialBinding: AllControllerBinding(), // 全局绑定 GetxController
       theme: ThemeData(
           primarySwatch: Colors.blue,
           appBarTheme: const AppBarTheme(

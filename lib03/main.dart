@@ -1,14 +1,7 @@
-/*
- * @LastEditors: hezeying@xdf.cn
- * @Date: 2025-03-28 00:14:06
- * @LastEditTime: 2025-03-30 18:42:02
- * @FilePath: /flutter_getx/lib03/main.dart
- * @Description: 
- */
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../lib/person.dart';
-import '../lib/animal.dart';
+import './person.dart';
+import './animal.dart';
 
 void main() {
   runApp(const MyApp());

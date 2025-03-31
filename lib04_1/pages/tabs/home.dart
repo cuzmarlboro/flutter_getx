@@ -1,8 +1,8 @@
 /*
  * @LastEditors: hezeying@xdf.cn
  * @Date: 2025-03-30 18:42:27
- * @LastEditTime: 2025-03-30 18:49:43
- * @FilePath: /flutter_getx/lib/pages/tabs/home.dart
+ * @LastEditTime: 2025-03-31 18:11:00
+ * @FilePath: /flutter_getx/lib04_1/pages/tabs/home.dart
  * @Description: 
  */
 import 'package:flutter/material.dart';
@@ -17,7 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   // 使用 Get.put 方法将创建控制器实例
-  CounterController counterController = Get.put(CounterController());
+  final counterController = Get.put<CounterController>(CounterController());
 
   @override
   Widget build(BuildContext context) {
